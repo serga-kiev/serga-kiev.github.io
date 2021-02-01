@@ -120,6 +120,7 @@ function updateSigninStatus(isSignedIn) {
         authorizeButton.style.display = 'none';
         signoutButton.style.display = 'block';
 
+        setInputsDisabled(false);
         // list all calendars
         //gapi.client.calendar.calendarList.list().then(value => console.log(value));
     } else {
@@ -139,6 +140,7 @@ function handleAuthClick(event) {
  *  Sign out the user upon button click.
  */
 function handleSignoutClick(event) {
+    setInputsDisabled(true);
     gapi.auth2.getAuthInstance().signOut();
 }
 
@@ -146,4 +148,10 @@ function appendPre(message) {
     const pre = document.getElementById('content');
     const textContent = document.createTextNode(message + '\n');
     pre.appendChild(textContent);
+}
+
+function setInputsDisabled(disable) {
+    document.getElementById('event-name').disabled = disable;
+    document.getElementById('add-event').disabled = disable;
+    document.getElementById('clear-calendar').disabled = disable;
 }
