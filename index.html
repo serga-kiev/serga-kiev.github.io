@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recurring Study Reminders</title>
+    <meta charset="utf-8"/>
+</head>
+<body style="zoom: 1.3">
+<p>Add recurring reminders. Reoccurrences: 20m, 8h, 1d, 2w, 2m</p>
+
+<input id="event-name" type="text" style=""/>
+<button id="add-event" style="" onclick="handleAddEvent()">Add</button>
+<br/>
+<br/>
+<br/>
+<button id="clear-calendar" style="" onclick="handleClearAll()">Clear All</button>
+
+<pre id="content" style="white-space: pre-wrap;"></pre>
+
+<button id="authorize_button" style="display: none;">Authorize</button>
+<button id="signout_button" style="display: none; margin-bottom: 30px">Sign Out</button>
+
+<script type="application/javascript" src="script.js"></script>
+<script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+</body>
+</html>
