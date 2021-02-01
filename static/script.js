@@ -23,9 +23,13 @@ function handleClientLoad() {
 }
 
 function handleClearAll() {
+    const clearBtn = document.getElementById('clear-calendar');
+    clearBtn.disabled = true;
+
     gapi.client.calendar.calendars.clear({
         'calendarId': CALENDAR_ID
     }).then(response => {
+        clearBtn.disabled = false;
         document.getElementById('content').innerHTML = '';
         console.log(response);
     })
