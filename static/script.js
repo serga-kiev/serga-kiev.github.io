@@ -26,6 +26,7 @@ function handleClearAll() {
     gapi.client.calendar.calendars.clear({
         'calendarId': CALENDAR_ID
     }).then(response => {
+        document.getElementById('content').innerHTML = '';
         console.log(response);
     })
 }
