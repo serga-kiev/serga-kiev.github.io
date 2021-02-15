@@ -72,7 +72,7 @@ function createNewEvent(text, start) {
         'reminders': {
             'useDefault': false,
             'overrides': [
-                {'method': 'popup', 'minutes': 0}
+                {'method': 'popup', 'minutes': 1}
             ]
         }
     };
